@@ -1,0 +1,39 @@
+import items/clothes/leatherBackpack;
+import items/misc/waterFlask;
+import items/misc/ironCoin;
+import items/weapon/ironSword;
+import items/clothes/clothTrousers;
+
+exampleGame =
+{
+
+goblin = 
+{
+	typeName = "goblin";
+	healthPoints = 25;
+	damage = 4;
+	position = { 20; -55; }
+	equipment =
+	{
+		backpack =
+		{
+			type = &leatherBackpack;
+			#amount is 1 by default
+			contents =
+			{
+				{
+					type = &waterFlask;
+					waterAmount = 50;
+				}
+				{
+					type = &ironCoin;
+					amount = 5;
+				}
+			}
+		}
+		rightArm = &ironSword;
+		legs = &clothTrousers;
+	}
+}
+
+}
