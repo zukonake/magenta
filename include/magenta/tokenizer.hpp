@@ -20,7 +20,7 @@ enum class CharacterType
 	DIGIT,
 	WHITESPACE
 };
-					// 129 because of trailing NULL terminator
+							 // 129 because of trailing NULL terminator
 const unsigned char ASCIITypes[ 129 ] =	
 	"IIIIIIIIIIWIIIII" //0  - 15
 	"IIIIIIIIIIIIIIII" //16 - 31
@@ -37,6 +37,7 @@ enum TokenType
 	IDENTIFIER,
 	OPERATOR,
 	NUMBER,
+	STRING, //TODO
 	WHITESPACE
 };
 
