@@ -37,7 +37,7 @@ std::vector< Token > tokenize( std::string const &data )
 		switch( type )
 		{
 			case CharacterType::LETTER:
-				if( buffer.type != IDENTIFIER )
+				if( buffer.type != IDENTIFIER && buffer.type != STRING )
 				{
 					if( buffer.type != IRRELEVANT )
 					{
@@ -53,17 +53,36 @@ std::vector< Token > tokenize( std::string const &data )
 				break;
 
 			case CharacterType::SIGN:
-				if( buffer.type != IRRELEVANT )
+				if( buffer.type != IRRELEVANT && buffer.type != STRING )
 				{
 					returnValue.push_back( buffer );
 				}
-				buffer.value = iCharacter;
-				buffer.type = OPERATOR;
+				if( buffer.type == STRING )
+				{
+					buffer.value += iCharacter;
+					if( iCharacter == buffer.value[0] )
+					{
+						returnValue.push_back( buffer );
+						buffer.value = "";
+						buffer.type = IRRELEVANT;
+					}
+				}	
+				else if( iCharacter == '\'' || iCharacter == '\"' )
+				{
+					buffer.value = iCharacter;
+					buffer.type = STRING;
+				}
+				else
+				{
+					buffer.value = iCharacter;
+					buffer.type = OPERATOR;
+				}
 				break;
 
 			case CharacterType::DIGIT:
 				if( buffer.type != IDENTIFIER &&
-					buffer.type != NUMBER )
+					buffer.type != NUMBER &&
+					buffer.type != STRING )
 				{
 					if( buffer.type != IRRELEVANT )
 					{
@@ -83,16 +102,27 @@ std::vector< Token > tokenize( std::string const &data )
 				{
 					returnValue.push_back( buffer );
 				}
-				buffer.value = iCharacter;
-				buffer.type = WHITESPACE;
+				if( buffer.type == STRING )
+				{
+					buffer.value += iCharacter;
+				}
+				else
+				{
+					buffer.value = iCharacter;
+					buffer.type = WHITESPACE;
+				}
 				break;
 
 			case CharacterType::IRRELEVANT:
-				if( buffer.type != IRRELEVANT )
+				if( buffer.type == STRING )
+				{
+					buffer.value += iCharacter;
+				}
+				else if( buffer.type != IRRELEVANT )
 				{
 					returnValue.push_back( buffer );
+					buffer.type = IRRELEVANT;
 				}
-				buffer.type = IRRELEVANT;
 				break;
 		}
 	}

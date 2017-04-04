@@ -24,7 +24,13 @@ BOOST_AUTO_TEST_CASE( tokenizeTest00 )
 {
 	BOOST_CHECK_EQUAL( tokenize( "this is a test text" ).size(), 5 );
 	BOOST_CHECK_EQUAL( tokenize( "this is a test text\n2" ).size(), 7 );
-	BOOST_CHECK_EQUAL( tokenize( "test = 2ab-  34\n{\nasdf;\n}" ).size(), 13 );
+	BOOST_CHECK_EQUAL( tokenize( "test = 2ab-  34\n{\nasdf;\n}" ).size(), 13 );	
+	BOOST_CHECK_EQUAL( tokenize( "this is a \"string\", does it work?" ).size(), 8 );
+	BOOST_CHECK_EQUAL( tokenize( "'another' \"test\" 'string\"in a string\"'" ).size(), 3 );
+	for( auto i : tokenize( "'another' \"test\" 'string\"in a string\"'" ))
+	{
+		std::cout << i.value << std::endl;
+	}
 }
 
 BOOST_AUTO_TEST_SUITE_END();
