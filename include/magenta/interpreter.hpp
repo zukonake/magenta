@@ -11,7 +11,7 @@
 //
 #include <magenta/table.hpp>
 
-namespace Magenta
+namespace magenta
 {
 
 class State;

@@ -9,7 +9,7 @@
 #include <vector>
 #include <string>
 
-namespace Magenta::Tokenizer
+namespace magenta::tokenizer
 {
 
 enum class CharacterType

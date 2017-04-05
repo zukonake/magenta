@@ -8,10 +8,8 @@
 
 #include <string>
 
-namespace Magenta
+namespace magenta
 {
-
-class VariableInterface { }
 
 template< typename T >
 class Variable : public VariableInterface

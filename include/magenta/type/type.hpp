@@ -1,5 +1,5 @@
 /**
- * @file magenta/parser.hpp
+ * @file magenta/type.hpp
  * @copyright Copyleft zukonake
  * @license Distributed under GNU General Public License Version 3
  */
@@ -9,9 +9,17 @@
 namespace magenta
 {
 
-class Parser
+enum Type
 {
-
+	TYPE_OF,
+	BOOLEAN,
+	INTEGER,
+	REAL,
+	STRING,
+	ARRAY,
+	MAP,
+	TABLE,
+	FUNCTION
 };
 
 }

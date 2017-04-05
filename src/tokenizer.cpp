@@ -3,7 +3,7 @@
 //
 #include <magenta/tokenizer.hpp>
 
-namespace Magenta::Tokenizer
+namespace magenta::tokenizer
 {
 
 CharacterType determineCharacterType( unsigned char const &character ) noexcept

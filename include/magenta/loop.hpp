@@ -1,20 +1,18 @@
 /**
- * @file magenta/array.hpp
+ * @file magenta/loop.hpp
  * @copyright Copyleft zukonake
  * @license Distributed under GNU General Public License Version 3
  */
 
 #pragma once
 
-#include <vector>
-
-namespace Magenta
+namespace magenta
 {
 
-class Array : std::vector< VariableInterface * >
+class Loop
 {
-public:
-private:
+	Statement mCondition;
+	Table 
 };
 
 }

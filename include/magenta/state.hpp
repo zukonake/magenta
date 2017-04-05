@@ -12,7 +12,7 @@
 #include <magenta/table.hpp>
 #include <magenta/interpreter.hpp>
 
-namespace Magenta
+namespace magenta
 {
 
 class State : public Interpreter
