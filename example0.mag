@@ -12,7 +12,7 @@ goblin =
 	typeName = "goblin";
 	healthPoints = 25;
 	damage = 4;
-	position = { 20; -55; }
+	position = { 20, -55 }
 	equipment =
 	{
 		backpack =

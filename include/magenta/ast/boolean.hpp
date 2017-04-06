@@ -12,10 +12,12 @@
 namespace magenta
 {
 
-class Boolean : public StaticType< BOOLEAN, bool >
+typedef bool BooleanValue;
+
+class Boolean : public StaticType< BOOLEAN, BooleanValue >
 {
 public:
-	using StaticType< BOOLEAN, bool >::operator;
+	using StaticType< BOOLEAN, BooleanValue >::operator;
 private:
 };
 

@@ -6,6 +6,9 @@
 
 #pragma once
 
+#include <string>
+#include <unordered_map>
+//
 #include <magenta/type/type.hpp>
 #include <magenta/type/staticType.hpp>
 
@@ -13,6 +16,8 @@ namespace magenta
 {
 
 class VariableInterface;
+
+typedef std::unordered_map< std::string, VariableInterface * > mapValue;
 
 class Map : public StaticType< MAP, MapValue >
 {

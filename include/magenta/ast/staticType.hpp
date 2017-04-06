@@ -17,7 +17,7 @@ class StaticType : public TypeInterface
 public:
 	explicit StaticType( T const &value );
 
-	operator T() const noexcept;
+	operator T &() const noexcept;
 
 	virtual constexpr Type getType() const noexcept override;
 
