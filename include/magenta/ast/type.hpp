@@ -18,7 +18,8 @@ enum Type
 	ARRAY,
 	MAP,
 	TABLE,
-	FUNCTION
+	FUNCTION,
+	CALL
 };
 
 }

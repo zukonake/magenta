@@ -14,8 +14,8 @@ Integer sampleInteger = 23.4;
 
 #io is really a table containing
 #the print function
-io::print( sampleVariable );
-io::print( sampleReal );
+io::print{ sampleVariable };
+io::print{ sampleReal };
 
 #this is in a principle
 #anonymous table, they
@@ -38,7 +38,7 @@ io::print( sampleReal );
 		c = false;
 	}
 	#will print asd"y"f
-	io.print( 'asd"y"f' );
+	io.print{ 'asd"y"f' };
 }
 
 #wont get implicitly called
@@ -46,12 +46,12 @@ sampleTable =
 {
 	abc = 2;
 	blahBlah = "asdasdasdfg";
-	io.print( blahBlah );
+	io.print{ blahBlah };
 }
 
 #explicit parameters
 #implicit return type
-sum( Integer a, Integer b ) =
+sum{ Integer a; Integer b } =
 {
 	a + b;
 }
@@ -59,12 +59,12 @@ sum( Integer a, Integer b ) =
 #access the abc element of sampleTable
 sampleTable::abc = 4;
 
-#explicit call to the table
-sampleTable();
+#call to the table
+sampleTable;
 
 #sampleTable::abc == 2
 #after the call
 
 #we add parameters to a table
 #making it a function
-sampleFunction = sampleTable( Integer a );
+sampleFunction = sampleTable{ Integer a };

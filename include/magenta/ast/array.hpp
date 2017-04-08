@@ -8,21 +8,15 @@
 
 #include <vector>
 //
-#include <magenta/type/type.hpp>
-#include <magenta/type/staticType.hpp>
+#include <magenta/ast/type.hpp>
+#include <magenta/ast/staticType.hpp>
 
 namespace magenta
 {
 
-class VariableInterface;
+class NodeInterface;
 
-typedef std::vector< VariableInterface * > ArrayValue;
-
-class Array : public StaticType< ARRAY, ArrayValue >
-{
-public:
-	using StaticType< ARRAY, ArrayValue >::operator;
-private:
-};
+typedef std::vector< NodeInterface * > ArrayValue;
+typedef StaticType< ARRAY, ArrayValue > Array;
 
 }

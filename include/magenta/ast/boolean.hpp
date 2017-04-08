@@ -14,11 +14,6 @@ namespace magenta
 
 typedef bool BooleanValue;
 
-class Boolean : public StaticType< BOOLEAN, BooleanValue >
-{
-public:
-	using StaticType< BOOLEAN, BooleanValue >::operator;
-private:
-};
+typedef StaticType< BOOLEAN, BooleanValue > Boolean;
 
 }
