@@ -1,5 +1,5 @@
 /**
- * @file magenta/variableInterface.hpp
+ * @file magenta/nodeInterface.hpp
  * @copyright Copyleft zukonake
  * @license Distributed under GNU General Public License Version 3
  */
@@ -11,6 +11,6 @@
 namespace magenta
 {
 
-class VariableInterface { }
+class NodeInterface { }
 
 }
